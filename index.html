@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CNH &amp; HKD Trading Strategy Tools</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:#0a0f1e;
+  color:#e2e8f0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:40px 24px;
+}
+
+/* ── Header ── */
+.header{text-align:center;margin-bottom:56px}
+.header .eyebrow{
+  font-size:11px;letter-spacing:4px;color:#4a9eff;
+  text-transform:uppercase;margin-bottom:14px;
+}
+.header h1{
+  font-size:32px;font-weight:700;color:#f0f6ff;
+  letter-spacing:-0.5px;margin-bottom:10px;
+}
+.header .tagline{font-size:14px;color:#64748b;line-height:1.6}
+
+/* ── Grid ── */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  width:100%;
+  max-width:960px;
+  margin-bottom:56px;
+}
+
+/* ── Cards ── */
+.tool-card{
+  position:relative;
+  background:#0d1929;
+  border:1.5px solid #1e3a5f;
+  border-radius:12px;
+  padding:28px 24px;
+  cursor:pointer;
+  text-decoration:none;
+  color:inherit;
+  display:block;
+  transition:transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+  overflow:hidden;
+}
+.tool-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:12px;
+  opacity:0;
+  transition:opacity 0.18s;
+}
+.tool-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.4)}
+
+/* live cards */
+.card-cnh{border-color:#1e3a5f}
+.card-cnh:hover{border-color:#4a9eff;box-shadow:0 12px 32px rgba(74,158,255,0.15)}
+.card-hkd:not(.card-soon):hover{border-color:#a78bfa;box-shadow:0 12px 32px rgba(167,139,250,0.15)}
+.card-cnh .icon{color:#4a9eff}
+.card-cnh .badge{background:#4a9eff22;color:#4a9eff}
+
+/* coming soon cards */
+.card-soon{border-color:#1e3a5f;opacity:0.55;cursor:not-allowed}
+.card-soon:hover{transform:none;box-shadow:none;border-color:#1e3a5f}
+
+.card-hkd .icon{color:#a78bfa}
+.card-hkd .badge{background:#a78bfa22;color:#a78bfa}
+.card-sofr .icon{color:#4ade80}
+.card-sofr .badge{background:#4ade8022;color:#4ade80}
+.card-basis .icon{color:#fb923c}
+.card-basis .badge{background:#fb923c22;color:#fb923c}
+
+.icon{font-size:28px;margin-bottom:14px;display:block}
+.card-title{font-size:15px;font-weight:700;color:#f0f6ff;margin-bottom:6px}
+.card-desc{font-size:12px;color:#64748b;line-height:1.55;margin-bottom:14px}
+.badge{
+  display:inline-block;
+  font-size:10px;font-weight:600;letter-spacing:1.5px;
+  text-transform:uppercase;padding:3px 9px;border-radius:20px;
+}
+.arrow{
+  position:absolute;bottom:22px;right:22px;
+  color:#1e3a5f;font-size:18px;
+  transition:color 0.18s, transform 0.18s;
+}
+.tool-card:not(.card-soon):hover .arrow{color:#4a9eff;transform:translateX(3px)}
+
+/* ── Footer ── */
+.footer{font-size:11px;color:#334155;text-align:center;line-height:1.8}
+.footer a{color:#4a9eff;text-decoration:none}
+.footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="eyebrow">Rates Derivatives</div>
+    <h1>CNH &amp; HKD Trading Strategy Tools</h1>
+    <div class="tagline">
+      Forward start pricing &nbsp;·&nbsp; PnL simulation &nbsp;·&nbsp; Multi-strategy backtest
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <!-- CNH CCS — LIVE -->
+    <a class="tool-card card-cnh" href="ccs.html">
+      <span class="icon">🇨🇳</span>
+      <div class="card-title">CNH CCS</div>
+      <div class="card-desc">
+        USD/CNH Cross Currency Swap backtest.<br>
+        Forward start · Pay or Receive CNH Fixed vs SOFR Float · Up to 3 strategies · Multi-strategy P&amp;L.
+      </div>
+      <span class="badge">Live</span>
+      <span class="arrow">→</span>
+    </a>
+
+    <!-- HKD IRS — LIVE -->
+    <a class="tool-card card-hkd" href="hkd.html">
+      <span class="icon">🇭🇰</span>
+      <div class="card-title">HKD IRS</div>
+      <div class="card-desc">
+        HKD Interest Rate Swap backtest.<br>
+        Forward start · Pay or Receive HKD Fixed vs 3M HIBOR · Up to 3 strategies.
+      </div>
+      <span class="badge">Live</span>
+      <span class="arrow">→</span>
+    </a>
+
+    <!-- USD SOFR — COMING SOON -->
+    <div class="tool-card card-soon card-sofr">
+      <span class="icon">🇺🇸</span>
+      <div class="card-title">USD SOFR</div>
+      <div class="card-desc">
+        USD SOFR OIS backtest.<br>
+        Forward start · Fixed vs SOFR Float · Strategy simulation.
+      </div>
+      <span class="badge">Coming Soon</span>
+    </div>
+
+    <!-- HKD-USD BASIS — COMING SOON -->
+    <div class="tool-card card-soon card-basis">
+      <span class="icon">🔄</span>
+      <div class="card-title">HKD–USD Basis</div>
+      <div class="card-desc">
+        HKD/USD Cross Currency Basis Swap.<br>
+        Forward start · Basis spread simulation.
+      </div>
+      <span class="badge">Coming Soon</span>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Built with Claude &nbsp;·&nbsp; Runs entirely in browser &nbsp;·&nbsp; No server required<br>
+    Data: Bloomberg &nbsp;·&nbsp; Calendars: CNH · HKD · USD
+  </div>
+
+</body>
+</html>
