@@ -848,7 +848,7 @@ async function buildMerge(){
       const buf = await pendingFiles.SOFR.arrayBuffer();
       const parsed = parseWideXlsx(buf);
       let added=0;
-      const SOFR_KEYS=['SOFR_6M','SOFR_1Y','SOFR_2Y','SOFR_3Y','SOFR_4Y','SOFR_5Y','SOFR_7Y','SOFR_10Y'];
+      const SOFR_KEYS=['SOFR_ON','SOFR_1M','SOFR_2M','SOFR_3M','SOFR_6M','SOFR_9M','SOFR_1Y','SOFR_2Y','SOFR_3Y','SOFR_4Y','SOFR_5Y','SOFR_7Y','SOFR_10Y','SOFR_12Y','SOFR_15Y'];
       for(const key of SOFR_KEYS){
         if(!parsed[key]){continue;}
         if(!newMD.sofr[key]) newMD.sofr[key]={};
