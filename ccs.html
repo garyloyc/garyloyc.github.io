@@ -314,6 +314,20 @@ function buildCNH(td){
   const sd=spotDt(td);
   const dfUSD_sd=dfUSD(sd);
   const pillars=[[td,1.0]];
+
+  // Short-end anchor: use FX-swap implied 6M CNH discount factor
+  // Covered interest parity: df_CNH(6M) = df_USD(6M) * F/S
+  // impl6m = (S/F - 1)*2*100  =>  F = S / (1 + impl6m/200)
+  // => df_CNH(6M) = df_USD(6M) / (1 + impl6m/200)
+  const impl=MD.impl6m?.[ds];
+  if(impl!=null){
+    const e6m=modFol(addM(sd,6));
+    const dfUSD_6m=dfUSD(e6m);
+    const dCNH_6m=dfUSD_6m*(1+impl/200);  // CIP: df_CNH = df_USD * S/F
+    if(dCNH_6m>0.9&&dCNH_6m<1.01)pillars.push([e6m,dCNH_6m]);
+  }
+
+  // Long end: par CCS pillars (pay CNH fixed quarterly Act/360 vs receive SOFR)
   const T=[['CCS_1Y',12],['CCS_2Y',24],['CCS_3Y',36],['CCS_4Y',48],
            ['CCS_5Y',60],['CCS_7Y',84],['CCS_10Y',120]];
   for(const[k,m]of T){
