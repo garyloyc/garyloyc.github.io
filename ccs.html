@@ -734,7 +734,7 @@ function clearLog(){
 function parseWideXlsx(arrayBuffer, skip=1){
   const wb = XLSX.read(arrayBuffer, {type:'array', cellDates:true});
   const ws = wb.Sheets[wb.SheetNames[0]];
-  const rows = XLSX.utils.sheet_to_json(ws, {header:1, raw:false, defval:null});
+  const rows = XLSX.utils.sheet_to_json(ws, {header:1, raw:true,  defval:null});
   if(!rows.length) return {};
 
   // headers in row 0
