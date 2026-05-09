@@ -731,7 +731,7 @@ function clearLog(){
 
 // Parse wide-format xlsx: col0=date, col1=series1_val, col2=series2_date, col3=series2_val ...
 // Returns {seriesName: {isoDate: value}}
-function parseWideXlsx(arrayBuffer, skip=2){
+function parseWideXlsx(arrayBuffer, skip=1){
   const wb = XLSX.read(arrayBuffer, {type:'array', cellDates:true});
   const ws = wb.Sheets[wb.SheetNames[0]];
   const rows = XLSX.utils.sheet_to_json(ws, {header:1, raw:false, defval:null});
@@ -741,15 +741,15 @@ function parseWideXlsx(arrayBuffer, skip=2){
   const hdrs = rows[0];
   // series names from even columns (0,2,4,...), values in odd columns
   const series = {};
-  for(let ci=0; ci<hdrs.length; ci+=2){
+  for(let ci=0; ci<hdrs.length; ci+=3){
     const name = hdrs[ci];
     if(!name) continue;
-    series[name] = {};
+    series[String(name).trim()] = {};
   }
 
   for(let ri=skip; ri<rows.length; ri++){
     const row=rows[ri];
-    for(let ci=0; ci<hdrs.length; ci+=2){
+    for(let ci=0; ci<hdrs.length; ci+=3){
       const name=hdrs[ci];
       if(!name) continue;
       const rawDate=row[ci];
@@ -771,7 +771,7 @@ function parseWideXlsx(arrayBuffer, skip=2){
       if(isNaN(d)) continue;
       const isoD=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
       const val=parseFloat(rawVal);
-      if(!isNaN(val)) series[name][isoD]=val;
+      if(!isNaN(val)) series[String(name).trim()][isoD]=val;
     }
   }
   return series;

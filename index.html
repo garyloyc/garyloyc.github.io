@@ -9,49 +9,49 @@
 body{font-family:'Segoe UI',Arial,sans-serif;background:#0a0f1e;color:#e2e8f0;min-height:100vh}
 .wrap{max-width:1100px;margin:0 auto;padding:48px 24px}
 .hero{margin-bottom:48px}
-.hero h1{font-size:28px;font-weight:700;color:#f0f6ff;margin-bottom:8px;letter-spacing:-0.5px}
-.hero p{font-size:14px;color:#64748b;line-height:1.7;max-width:560px}
+.hero h1{font-size:28px;font-weight:700;color:#f1f5f9;margin-bottom:10px;letter-spacing:-0.5px}
+.hero p{font-size:14px;color:#94a3b8;line-height:1.8;max-width:580px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
 .card{background:#0d1929;border:1px solid #1e3a5f;border-radius:12px;padding:28px 24px;
   text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:12px;
   transition:border-color 0.2s,transform 0.15s,box-shadow 0.2s;position:relative;overflow:hidden}
 .card:hover{transform:translateY(-3px)}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-.card.cnh::before{background:linear-gradient(90deg,#a78bfa,#7c3aed)}
-.card.hkd::before{background:linear-gradient(90deg,#818cf8,#4f46e5)}
-.card.basis::before{background:linear-gradient(90deg,#22d3ee,#0891b2)}
-.card.sofr::before{background:linear-gradient(90deg,#f59e0b,#d97706)}
-.card.cnh:hover{border-color:#a78bfa;box-shadow:0 8px 32px rgba(167,139,250,0.15)}
-.card.hkd:hover{border-color:#818cf8;box-shadow:0 8px 32px rgba(129,140,248,0.15)}
-.card.basis:hover{border-color:#22d3ee;box-shadow:0 8px 32px rgba(34,211,238,0.15)}
-.card.sofr:hover{border-color:#f59e0b;box-shadow:0 8px 32px rgba(245,158,11,0.10)}
+.card.cnh::before{background:linear-gradient(90deg,#c084fc,#7c3aed)}
+.card.hkd::before{background:linear-gradient(90deg,#60a5fa,#2563eb)}
+.card.basis::before{background:linear-gradient(90deg,#34d399,#059669)}
+.card.sofr::before{background:linear-gradient(90deg,#f97316,#c2410c)}
+.card.cnh:hover{border-color:#c084fc;box-shadow:0 8px 32px rgba(192,132,252,0.15)}
+.card.hkd:hover{border-color:#60a5fa;box-shadow:0 8px 32px rgba(96,165,250,0.15)}
+.card.basis:hover{border-color:#34d399;box-shadow:0 8px 32px rgba(52,211,153,0.15)}
+.card.sofr:hover{border-color:#f97316;box-shadow:0 8px 32px rgba(249,115,22,0.10)}
 .card-icon{font-size:24px;width:44px;height:44px;border-radius:8px;display:flex;
   align-items:center;justify-content:center}
-.cnh .card-icon{background:#a78bfa18}
-.hkd .card-icon{background:#818cf818}
-.basis .card-icon{background:#22d3ee18}
-.sofr .card-icon{background:#f59e0b18}
-.card-title{font-size:15px;font-weight:700;color:#f0f6ff}
+.cnh .card-icon{background:#c084fc18}
+.hkd .card-icon{background:#60a5fa18}
+.basis .card-icon{background:#34d39918}
+.sofr .card-icon{background:#f9731618}
+.card-title{font-size:15px;font-weight:700;color:#f1f5f9}
 .card-sub{font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-top:-6px}
-.cnh .card-sub{color:#a78bfa}
-.hkd .card-sub{color:#818cf8}
-.basis .card-sub{color:#22d3ee}
-.sofr .card-sub{color:#f59e0b}
-.card-desc{font-size:12px;color:#64748b;line-height:1.65;flex:1}
+.cnh .card-sub{color:#c084fc}
+.hkd .card-sub{color:#60a5fa}
+.basis .card-sub{color:#34d399}
+.sofr .card-sub{color:#f97316}
+.card-desc{font-size:12px;color:#94a3b8;line-height:1.7;flex:1}
 .card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
 .tag{font-size:10px;padding:3px 8px;border-radius:20px;letter-spacing:0.5px}
-.cnh .tag{background:#a78bfa18;color:#a78bfa;border:1px solid #a78bfa30}
-.hkd .tag{background:#818cf818;color:#818cf8;border:1px solid #818cf830}
-.basis .tag{background:#22d3ee18;color:#22d3ee;border:1px solid #22d3ee30}
-.sofr .tag{background:#f59e0b18;color:#f59e0b;border:1px solid #f59e0b30}
+.cnh .tag{background:#c084fc18;color:#c084fc;border:1px solid #c084fc30}
+.hkd .tag{background:#60a5fa18;color:#60a5fa;border:1px solid #60a5fa30}
+.basis .tag{background:#34d39918;color:#34d399;border:1px solid #34d39930}
+.sofr .tag{background:#f9731618;color:#f97316;border:1px solid #f9731630}
 .badge{display:inline-block;font-size:9px;letter-spacing:2px;text-transform:uppercase;
   padding:3px 8px;border-radius:20px;font-weight:700;margin-left:6px;vertical-align:middle}
 .live{background:#4ade8020;color:#4ade80;border:1px solid #4ade8040}
-.soon{background:#f59e0b18;color:#f59e0b;border:1px solid #f59e0b30}
+.soon{background:#f9731618;color:#f97316;border:1px solid #f9731630}
 .footer{margin-top:56px;padding-top:24px;border-top:1px solid #1e3a5f;
   display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.footer-left{font-size:12px;color:#334155;line-height:1.7}
-.footer-right{font-size:11px;color:#1e3a5f}
+.footer-left{font-size:12px;color:#64748b;line-height:1.8}
+.footer-right{font-size:11px;color:#334155}
 </style>
 </head>
 <body>
@@ -60,7 +60,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0a0f1e;color:#e2e8f0;mi
     <h1>CNH &amp; HKD Trading Strategy Tools</h1>
     <p>Forward-start swap backtest and P&amp;L simulation tools for CNH cross-currency swaps,
       HKD interest rate swaps, and HIBOR–SOFR basis swaps.
-      All tools use market-quoted data with proper curve bootstrapping.</p>
+      All tools use market-quoted data with proper curve bootstrapping.
+      Upload new data files in each tool to extend the dataset — existing data is never overwritten.</p>
   </div>
 
   <div class="grid">
@@ -75,7 +76,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0a0f1e;color:#e2e8f0;mi
       <div class="card-desc">
         Forward-start USD/CNH cross-currency basis swap backtest.
         Pay CNH fixed vs receive SOFR float, full notional exchange.
-        Single-curve CCS bootstrap from CCS_1Y–CCS_10Y quotes.
+        Two-curve bootstrap: SOFR USD discount + CNH CCS discount curve.
       </div>
       <div class="card-tags">
         <span class="tag">CNH Fixed vs SOFR</span>
@@ -94,7 +95,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0a0f1e;color:#e2e8f0;mi
       </div>
       <div class="card-desc">
         Forward-start HKD fixed vs 3M HIBOR swap backtest with optional
-        paired SOFR IRS. Two-curve bootstrap: FX swap short end + IRS long end.
+        paired SOFR IRS. Two-curve bootstrap: FX swap short end + quarterly Act/365 IRS long end.
         Combined P&amp;L in USD when SOFR leg activated.
       </div>
       <div class="card-tags">
@@ -114,8 +115,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0a0f1e;color:#e2e8f0;mi
       </div>
       <div class="card-desc">
         Forward-start HIBOR–SOFR cross-currency basis swap backtest.
-        Pay 3M HIBOR + spread (HKD) vs receive SOFR (USD), full notional exchange.
-        Three-curve bootstrap: USD discount · HKD forecast · HKD CCS discount.
+        Receive 3M HIBOR + spread (HKD) vs pay SOFR (USD), full notional exchange.
+        Three-curve bootstrap: SOFR discount · HKD forecast (quarterly Act/365) · HKD CCS discount.
       </div>
       <div class="card-tags">
         <span class="tag">HIBOR + Spread vs SOFR</span>
@@ -126,7 +127,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0a0f1e;color:#e2e8f0;mi
     </a>
 
     <!-- USD SOFR IRS -->
-    <a href="#" class="card sofr" onclick="return false" style="cursor:default;opacity:0.55">
+    <a href="#" class="card sofr" onclick="return false" style="cursor:default;opacity:0.45">
       <div class="card-icon">$</div>
       <div>
         <div class="card-title">USD SOFR IRS <span class="badge soon">Coming Soon</span></div>
@@ -148,8 +149,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0a0f1e;color:#e2e8f0;mi
 
   <div class="footer">
     <div class="footer-left">
-      Data embedded through <b style="color:#475569">Apr 2026</b> &nbsp;·&nbsp;
-      Upload new files in each tool to extend the date range &nbsp;·&nbsp;
+      Data embedded through <b style="color:#64748b">Apr 2026</b> &nbsp;·&nbsp;
+      Upload new files in each tool to extend — existing data is preserved &nbsp;·&nbsp;
       All P&amp;L figures are illustrative and not investment advice
     </div>
     <div class="footer-right">CNH &amp; HKD Rates Desk</div>
